@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP</title>
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="picture" id="picture">
+        <div class ="border">
+            <div class="logo" id="logo">WELCOME</div>
+        </div>
+    </div>
+    <div class="right" id="right">
+        <div class="information" id="information"> Hii, we need some information about you to make our service more enhance and compatible according to your needs.</div>
+        <form action="#" method = "POST">
+            <legend>Let's Do This</legend>
+            <div class="form left">
+                <div class="first_name">
+                    <div for="first_name">First Name</div>
+                    <input type="text" name="first_name" id="first_name" required>
+                </div>
+                <div class="last_name">
+                    <div for="last_name">Last Name</div>
+                    <input type="text" name="last_name" id="last_name">
+                </div>
+                <div class="contact">
+                    <div for="contact">Contact No.</div>
+                    <input type="number" pattern="^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$" name="contact" id="contact">
+                </div>
+                <div class="email">
+                    <div for="email">Email</div>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="password">
+                    <div for="password">Password</div>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="cpassword">
+                    <div for="cpassword">Confirm Password</div>
+                    <input type="password" name="cpassword" id="cpassword">
+                </div>
+            </div>
+            <div class="left button" >
+                <button type="submit" id="button" >Sign Up</button>
+            </div>
+        </form>
+        <div class="log-in">
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+    <script>
+        let confirmPassword = document.getElementById('cpassword')
+        let password = document.getElementById('password')
+        let check = false;
+        confirmPassword.addEventListener('keyup',(e)=>{
+            if(confirmPassword.value=== password.value) {
+                check =true;
+                confirmPassword.style.border = '2px solid rgb(4, 247, 97)'
+            }
+            else if(confirmPassword.value==='')
+            {   
+                check =false;
+                confirmPassword.style.border = '2px solid rgb(199, 197, 197)'
+            }
+            else{
+                check =false;
+                confirmPassword.style.border = '2px solid rgb(240, 1, 1)'
+            }
+            if(check){
+                let button = document.querySelector("#button")
+                button.disabled = false;
+            }
+        })
+    </script>
+</body>
+</html>
